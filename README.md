@@ -49,34 +49,40 @@ AutoDFD AI is an AI-powered web application that automatically generates profess
 ```
 AutoDFD-AI/
 │
-├── app.py
-├── config.py
-├── requirements.txt
+├── app.py                     # Flask application entry point
+├── config.py                  # Application configuration
+├── requirements.txt           # Project dependencies
+├── README.md                  # Project documentation
+├── .gitignore                 # Files and folders ignored by Git
+├── .env                       # Environment variables (not included in repository)
 │
 ├── routes/
-│   └── dfd_routes.py
+│   ├── __init__.py
+│   └── dfd_routes.py          # API routes for DFD generation
 │
 ├── services/
-│   └── groq_service.py
+│   ├── __init__.py
+│   └── groq_service.py        # AI prompt generation and Groq API integration
 │
 ├── utils/
-│   └── helpers.py
+│   ├── __init__.py
+│   └── helpers.py             # Input validation, Mermaid cleaning, and utility functions
 │
 ├── templates/
-│   ├── base.html
-│   ├── index.html
-│   └── result.html
+│   ├── base.html              # Base HTML template
+│   ├── index.html             # Main application page
+│   └── result.html            # Result page template
 │
 ├── static/
 │   ├── css/
-│   │   └── style.css
+│   │   └── style.css          # Application styling
 │   │
 │   └── js/
-│       └── script.js
+│       └── script.js          # Frontend logic and Mermaid rendering
 │
-└── .env
+├── __pycache__/               # Python cache files (ignored)
+└── venv/                      # Virtual environment (ignored)
 ```
-
 ---
 
 ## Workflow
