@@ -1,0 +1,277 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#">
+           <i class="fa-solid fa-diagram-project"></i>
+            AutoDFD AI
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#hero">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#generator">Generator</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#footer">About</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section" id="hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-6">
+
+                <h1 class="hero-title">
+                    Intelligent AI Powered
+                    <span>DFD Generator</span>
+                </h1>
+
+                <p class="hero-subtitle">
+
+                    Generate professional Data Flow Diagrams
+                    instantly from natural language descriptions
+                    using Generative AI and Mermaid.js.
+
+                </p>
+
+                <a href="#generator" class="btn hero-btn">
+                    Generate Now
+                </a>
+
+            </div>
+
+            <div class="col-lg-6 text-center">
+
+                <div class="hero-card glass-card">
+
+                    <i class="fa-solid fa-brain hero-icon"></i>
+
+                    <h3>AI Diagram Automation</h3>
+
+                    <p>
+                        Convert system descriptions into
+                        structured DFD diagrams instantly.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Generator Section -->
+<section class="generator-section" id="generator">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-10">
+
+                <div class="glass-card generator-card">
+
+                    <h2 class="section-title text-center">
+                        Generate Your DFD
+                    </h2>
+
+                    <!-- Textarea -->
+                    <div class="mb-4">
+
+                        <label class="form-label">
+                            Enter System Description
+                        </label>
+
+                        <textarea
+                                id="description"
+                                class="form-control custom-textarea"
+                                rows="8"
+                                placeholder="Example: Customer places order through website and admin verifies order before storing in database..."></textarea>
+
+                        <div class="char-counter">
+                            <span id="charCount">0</span> Characters
+                        </div>
+
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="button-group">
+
+                        <button class="btn action-btn"
+                                id="generateBtn">
+
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            Generate DFD
+
+                        </button>
+
+                        <button class="btn action-btn secondary-btn"
+                                id="clearBtn">
+
+                            <i class="fa-solid fa-trash"></i>
+                            Clear
+
+                        </button>
+
+                        <button class="btn action-btn secondary-btn"
+                                id="copyBtn">
+
+                            <i class="fa-solid fa-copy"></i>
+                            Copy Code
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Output Section -->
+        <div class="row justify-content-center mt-5">
+
+            <div class="col-lg-10">
+
+                <div class="glass-card output-card">
+
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+
+                        <div>
+                            <h3>Generated Diagram</h3>
+
+                            <div id="dfdLevelBadge"
+                                 class="badge bg-success mt-2"
+                                style="display:none;">
+                            </div>
+                        </div>
+
+                        <div>
+
+                            <button class="btn export-btn"
+                                    id="pngBtn">
+
+                                PNG
+
+                            </button>
+
+                            <button class="btn export-btn"
+                                    id="pdfBtn">
+
+                                PDF
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Loading -->
+                    <div id="loading" class="loading-container d-none">
+
+                        <div class="spinner-border text-success"></div>
+
+                        <p class="mt-3">
+                            Generating AI Diagram...
+                        </p>
+
+                    </div>
+
+                    <!-- Mermaid Output -->
+                    <div id="diagramContainer">
+
+                        <div id="diagram" class="diagram-box">
+
+                            <p class="placeholder-text">
+                                Your generated DFD diagram will appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Mermaid Code -->
+                    <div class="mt-4">
+
+                        <h5>Mermaid Syntax</h5>
+
+                        <pre id="mermaidCode"
+                             class="code-box"></pre>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="footer-section" id="footer">
+
+    <div class="container text-center">
+
+        <h4>AutoDFD AI</h4>
+
+        <p>
+            AI Powered Data Flow Diagram Generation System
+        </p>
+
+        <div class="footer-icons">
+
+            <i class="fa-brands fa-python"></i>
+            <i class="fa-brands fa-js"></i>
+            <i class="fa-solid fa-brain"></i>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 DFDGen AI | Automated DFD Generator
+        </p>
+
+    </div>
+
+</footer>
+
+{% endblock %}

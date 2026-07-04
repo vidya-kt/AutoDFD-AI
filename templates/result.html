@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="glass-card p-5 mt-5">
+
+        <h1 class="text-center mb-4">
+
+            Generated DFD Result
+
+        </h1>
+
+        <div id="resultDiagram">
+
+            {{ mermaid|safe }}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
