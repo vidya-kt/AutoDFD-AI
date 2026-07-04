@@ -247,11 +247,6 @@ Add screenshots of:
 ## Author
 
 Vidya K T
-
-MCA Student
-
-Bangalore Institute of Technology
-
 ---
 
 ## License
